@@ -12,8 +12,10 @@ public class UINetworkManager : MonoBehaviour
     private Button ServerBtn;
 
     [SerializeField]
-    private GameObject NetwrokCanvas;
+    private GameObject NetworkCanvas;
 
+    [SerializeField]
+    private GameObject GuiCanvas;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class UINetworkManager : MonoBehaviour
 
     private void CloseCanvas()
     {
-        NetwrokCanvas.SetActive(false);
+        NetworkCanvas.SetActive(false);
+        GuiCanvas.SetActive(true);
     }
 }

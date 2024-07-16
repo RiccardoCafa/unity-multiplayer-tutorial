@@ -50,5 +50,7 @@ public class ArenaObjectLauncher : NetworkBehaviour
         var instance = Instantiate(_bananaPrefab, position, rotation);
 
         instance.GetComponent<NetworkObject>().Spawn();
+
+        GameManager.Instance.AddBanana();
     }
 }
