@@ -44,6 +44,7 @@ public class GameManager : NetworkBehaviour
     {
         base.OnNetworkSpawn();
 
+        // Check if the UIBananaCounter exists
         FindObjectOfType<UIBananaCounter>().SetBananaCounterTo(BananaCounter.Value);
     }
 
