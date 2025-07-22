@@ -63,4 +63,21 @@ public class MenuManager : NetworkBehaviour
                 }
         }
     }
+
+    public void UnloadScene()
+    {
+        if (!IsServer || !IsSpawned || !currentScene.IsValid() || !currentScene.isLoaded)
+        {
+            return;
+        }
+
+        // Unload the scene
+        var status = NetworkManager.SceneManager.UnloadScene(currentScene);
+
+        if (status != SceneEventProgressStatus.Started)
+        {
+            Debug.LogWarning($"Failed to unload {sceneName} with" +
+                $" a {nameof(SceneEventProgressStatus)}: {status}");
+        }
+    }
 }

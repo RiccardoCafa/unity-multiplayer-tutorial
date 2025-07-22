@@ -42,7 +42,7 @@ public class UINetworkManager : MonoBehaviour
 
         StartBtn.onClick.AddListener(() =>
         {
-            
+            FindObjectOfType<MenuManager>().GoToGame();
         });
     }
 

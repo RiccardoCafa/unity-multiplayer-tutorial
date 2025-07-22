@@ -20,9 +20,7 @@ public class PlayerManager : NetworkBehaviour
         {
             var instance = Instantiate(_playerCameraFollowPrefab);
 
-            var virtualCam = instance.GetComponent<CinemachineVirtualCamera>();
-
-            if (virtualCam != null )
+            if (instance.TryGetComponent<CinemachineVirtualCamera>(out var virtualCam))
             {
                 virtualCam.Follow = _tpsController.CinemachineCameraTarget.transform;
             }
